@@ -36,7 +36,7 @@ $ ember s
 
 You should now have a 'Welcome to Ember' page running on `http://localhost:4200`. 
 
-![Ember Running](/screenshots/001-ember+running.PNG)
+![Ember Running](/screenshots/001-ember+running.PNG?raw=true)
 
 [Did it work?](http://localhost:4200/)
 If not, trouble shoot and fix it... We'll wait right here for you.
@@ -71,10 +71,10 @@ and enabled the "Static Website Hosting" option and set **Index Document** and *
 "index.html". Then I added permissions to make the site viewable for everyone.
 Amazon saying "US Standard" for your bucket is the same as "us-east-1" just for future reference.
 
-![s3 bucket](/screenshots/002-s3-bucket-config.PNG)
+![s3 bucket](/screenshots/002-s3-bucket-config.PNG?raw=true)
 
 
-![s3 bucket Perms](/screenshots/003-s3-bucket-perms.PNG)
+![s3 bucket Perms](/screenshots/003-s3-bucket-perms.PNG?raw=true)
 
 We'll use [Ember-cli-deploy-s3](https://github.com/ember-cli-deploy/ember-cli-deploy-s3) to upload our application to S3. This will be the bridge between our worlds. 
 
@@ -107,7 +107,7 @@ $ ember deploy production
 
 If all went well, go to your endpont (bucket-name.s3-website-us-east-1.amazonaws.com) and you should have some success all over your hands.
 
-![Site running on S3](/screenshots/004-site-on-s3.PNG)
+![Site running on S3](/screenshots/004-site-on-s3.PNG?raw=true)
 
 ___
 ### Section 3 -- Building The App (In progress)
