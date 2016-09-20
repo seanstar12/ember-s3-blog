@@ -1,6 +1,5 @@
 # My Snowflake Blog
 A 'blog' engine written in EmberJS that is statically hosted on S3 and has an ElasticSearch database.
-This is very much a work in progress.
 
 #### TODO
  - [ ] Create the Ember App.
@@ -30,13 +29,14 @@ $ cd s3-blog
 This downloads and installs (locally) all of the nodejs/bower files we need to continue.
 It also gives us jellybean templates for config files. Now we can run the Ember server to test our hard work.
 
-```cd s3-blog
+```
+cd s3-blog
 $ ember s
 ```
 
 You should now have a 'Welcome to Ember' page running on `http://localhost:4200`. 
 
-![Ember Running](/screenshots/001-ember+running.PNG?raw=true)
+![Ember Running](https://s3.amazonaws.com/fkunfudiktihneudfccjctvfhjgch-s3-blog/post-images/001-ember+running.PNG)
 
 [Did it work?](http://localhost:4200/)
 If not, trouble shoot and fix it... We'll wait right here for you.
@@ -71,10 +71,10 @@ and enabled the "Static Website Hosting" option and set **Index Document** and *
 "index.html". Then I added permissions to make the site viewable for everyone.
 Amazon saying "US Standard" for your bucket is the same as "us-east-1" just for future reference.
 
-![s3 bucket](/screenshots/002-s3-bucket-config.PNG?raw=true)
+![s3 bucket](https://s3.amazonaws.com/fkunfudiktihneudfccjctvfhjgch-s3-blog/post-images/002-s3-bucket-config.PNG)
 
 
-![s3 bucket Perms](/screenshots/003-s3-bucket-perms.PNG?raw=true)
+![s3 bucket Perms](https://s3.amazonaws.com/fkunfudiktihneudfccjctvfhjgch-s3-blog/post-images/003-s3-bucket-perms.PNG)
 
 We'll use [Ember-cli-deploy-s3](https://github.com/ember-cli-deploy/ember-cli-deploy-s3) to upload our application to S3. This will be the bridge between our worlds. 
 
@@ -107,7 +107,7 @@ $ ember deploy production
 
 If all went well, go to your endpont (bucket-name.s3-website-us-east-1.amazonaws.com) and you should have some success all over your hands.
 
-![Site running on S3](/screenshots/004-site-on-s3.PNG?raw=true)
+![Site running on S3](https://s3.amazonaws.com/fkunfudiktihneudfccjctvfhjgch-s3-blog/post-images/004-site-on-s3.PNG)
 
 ___
 ### Section 3 -- Building The App (In progress)
