@@ -1,14 +1,24 @@
 # My Snowflake Blog
 A 'blog' engine written in EmberJS that is statically hosted on S3 and has an ElasticSearch database.
+Checkout [ember-es-adapter](http://github.com/seanstar12/ember-es-adapter) for more information on the
+elasticsearch integration.
 
 #### TODO
- - [ ] Create the Ember App.
+ - [x] Create the Ember App.
  - [ ] Put request signing in adapter or create addon?
  - [ ] Add the adapter and PUT functionallity
  - [ ] Definitely more...
 
 #### What's the point of this?
 Some people say that I don't care enough, so this is my attempt to be 'a better person'. Also, I hope this can aid other developers in the struggles of platform integration.
+
+#### Snowflake blog instructiosn
+```javascript
+$ cd ember
+$ npm install
+$ bower install
+$ ember server
+```
 
 #### Infrastructure
 * Amazon S3
