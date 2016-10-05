@@ -1,0 +1,17 @@
+<ul class="post__list">
+  {{#each model as |post|}}
+      <li>
+        {{#link-to "post" post.id}}
+          <span class="post__list_title">
+            {{post.title}}
+          </span>
+        {{/link-to}}
+        <span class="post__list_date">
+          {{post.date}}
+        </span>
+        <div class="post__list_teaser">
+          {{post.teaser}}
+        </div>
+      </li>
+  {{/each}}
+</ul>

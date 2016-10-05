@@ -1,0 +1,21 @@
+{
+  "name": "s3-blog",
+  "description": "Small description for s3-blog goes here",
+  "version": "0.0.0",
+  "options": {
+    "enabledEnvironemnts": [
+      "development",
+      "production"
+    ],
+    "paths": [
+      "app",
+      "lib"
+    ],
+    "exclude": "vendor,bower_components,node_modules,dist",
+    "outdir": "docs",
+    "linkNatives": true,
+    "quiet": true,
+    "parseOnly": false,
+    "lint": false
+  }
+}

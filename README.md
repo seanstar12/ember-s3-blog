@@ -79,7 +79,7 @@ Amazon saying "US Standard" for your bucket is the same as "us-east-1" just for 
 We'll use [Ember-cli-deploy-s3](https://github.com/ember-cli-deploy/ember-cli-deploy-s3) to upload our application to S3. This will be the bridge between our worlds. 
 
 ```
-$ ember install ember-cli-deploy ember-cli-deploy-build  ember-cli-deploy-s3
+$ ember install ember-cli-deploy ember-cli-deploy-build ember-cli-deploy-s3
 
 $ ember install ember-cli-deploy-gzip ember-cli-deploy-manifest
 ```
@@ -102,7 +102,7 @@ module.exports = function(deployTarget) {
 ### Hold on to your butts...
 We use the ember-cli-deploy module to build and push the app up to S3.
 ```
-$ ember deploy production
+$ ember deploy production --verbose
 ```
 
 If all went well, go to your endpont (bucket-name.s3-website-us-east-1.amazonaws.com) and you should have some success all over your hands.

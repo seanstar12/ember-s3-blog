@@ -1,0 +1,52 @@
+.small {
+  font-size: 0.4em;
+}
+.nav {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.nav__title {
+    padding: 0;
+    margin: 0;
+    heigth: 10px;
+}
+.nav__links {
+    padding: 0;
+    margin: 0;
+}
+.nav__links li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+
+.nav__links li a {
+    padding: 0;
+    margin: 0;
+    margin-left: 1.4em;
+}
+
+.post__list {
+  list-style: none;
+}
+
+.post__list li {
+  padding-bottom: 1.5em;
+}
+
+.post__list li a {
+  text-decoration: none;
+}
+
+.post__list_title {
+  font-size: 2em;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 0.5em;
+}
