@@ -10,9 +10,9 @@ elasticsearch integration.
  - [ ] Definitely more...
 
 #### What's the point of this?
-Some people say that I don't care enough, so this is my attempt to be 'a better person'. Also, I hope this can aid other developers in the struggles of platform integration.
+Some people say that I don't care enough, so this is my attempt to be 'a better person'. Also, I hope this can aid other developers in the struggles of platform integration. 
 
-#### Snowflake blog instructiosn
+#### How to Run the supplied ember app.
 ```javascript
 $ cd ember
 $ npm install
@@ -27,7 +27,7 @@ $ ember server
 * Nodejs, Bower, EmberJS
 
 --- 
-### Part A -- Make an Ember App
+### Part A -- Make Your Own Ember App
 Going to need Nodejs, bower, etc...
 [Go here if you need your hand held](https://ember-cli.com/user-guide/).
 
