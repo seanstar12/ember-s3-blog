@@ -3,4 +3,8 @@
   <span class="small">{{model.date}}</span>
 </h2>
 <br/>
+  <button class="delete-post" {{action "deletePost" model}}>
+    Delete Post ({{model.id}})
+  </button>
+<br/>
 {{{model.body}}}
