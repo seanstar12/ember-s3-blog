@@ -12,6 +12,7 @@ Router.map(function() {
   });
   this.route('post', { path: '/post' },function() {
     this.route('index', { path: '/:post_id' });
+    this.route('new');
     this.route('error');
     this.route('loading');
   });
