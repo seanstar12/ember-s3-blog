@@ -1,0 +1,34 @@
+<h2>
+  New Post ID: {{post.postId}} <br/>
+  Title: {{post.title}}
+  <span class="small">{{post.date}}</span>
+</h2>
+
+<form {{action "createPost" on="submit"}} class="create-form">
+  <div class="form-group">
+    <label> Title
+    {{input value=post.title class="form-control" placeholder="Title"}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label> Date
+    {{pikaday-input onSelection=(action 'onDateSelect')}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label> Body
+    {{textarea value=post.body cols="80" rows="6"placeholder="Body"}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label> Teaser
+    {{textarea value=post.teaser cols="80" rows="3"placeholder="Teaser"}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label> Favorite
+    {{input checked=post.favorite type="checkbox" name="favorite"}}
+    </label>
+  </div>
+  <button type="submit" class="btn">Save Post</button>
+</form>
