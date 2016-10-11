@@ -39,6 +39,9 @@ export default Ember.Route.extend({
             route.controller.set('transition', transition);
           });
       }
+    },
+    addPost() {
+      this.transitionTo('post.new');
     }
   }
 
