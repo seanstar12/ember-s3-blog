@@ -4,6 +4,7 @@ import EsTools from "ember-es-adapter/utils/es-mapper";
 
 export default Ember.Controller.extend({
   store: Ember.inject.service(),
+  postId: 0,
   time: null,
   post: null,
   disableSubmit: false,
@@ -11,21 +12,22 @@ export default Ember.Controller.extend({
   init() {
     let es = new EsTools();
 
+    this.set('post',
+      Ember.Object.create({
+        body: null,
+        date: null,
+        favorite: false,
+        tags: Ember.A(),
+        teaser: null,
+        title: null,
+        postId: null,
+        id: null
+      }));
+
     es.getLastId('posts', 'post-id')
       .then((num) => {
-        num++;
-
-        this.set('post',
-          Ember.Object.create({
-            body: null,
-            date: null,
-            favorite: false,
-            tags: Ember.A(),
-            teaser: null,
-            title: null,
-            postId: num,
-            id: num
-          }));
+        num += 1;
+        this.set('postId', num);
       });
   },
 
@@ -53,8 +55,8 @@ export default Ember.Controller.extend({
         body: post.body,  
         teaser: post.teaser,  
         favorite: post.favorite,  
-        postId: post.postId,  
-        id: post.id,  
+        postId: this.get('postId'),  
+        id: this.get('postId'),  
       });
 
       record.save();
