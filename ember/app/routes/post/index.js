@@ -46,6 +46,11 @@ export default Ember.Route.extend({
             route.controller.set('transition', transition);
           });
       }
+    },
+    deletePost(model) {
+      console.log(model);
+      model.deleteRecord();
+      model.save();
     }
   }
 
