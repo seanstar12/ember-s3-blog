@@ -16,14 +16,15 @@ export default Ember.Route.extend({
       //params['query'] = 'swagblazeit';
 
       //adding es params into the default params, and initiating new instance
-      let esParams = {'sort': 'date', 'sortType': 'desc'};
-      let dsl = new QueryDSL(esParams);
 
-      dsl.query()
-        .bool()
-        .match_phrase({'title': 'second'});
+      //let esParams = {'sort': 'date', 'sortType': 'desc'};
+      //let dsl = new QueryDSL(esParams);
 
-      console.log(dsl.getThis());
+      //dsl.query()
+      //  .bool()
+      //  .match_phrase({'title': 'second'});
+
+      //console.log(dsl.getThis());
       params['esQuery'] = {query:{match_all:{}},size: 20, sort: [{date:'desc'}]};
       return this.store.query('post', params);
     }
