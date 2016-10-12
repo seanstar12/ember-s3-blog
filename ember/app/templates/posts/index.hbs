@@ -1,3 +1,11 @@
+{{#if isAdmin}}
+  <div class="admin-bar">
+    <ul class="admin-bar__links">
+      <li><button {{action "addPost"}}>Add Post</button></li> 
+    </ul> 
+  </div>  
+{{/if}}
+
 <ul class="post__list">
   {{#each model as |post|}}
       <li>
@@ -15,6 +23,3 @@
       </li>
   {{/each}}
 </ul>
-<button class="add-post" {{action "addPost"}}>
-  New Post
-</button>

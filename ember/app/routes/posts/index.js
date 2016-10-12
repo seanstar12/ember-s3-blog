@@ -1,10 +1,10 @@
 import Ember from 'ember';
-import EsQuery from 'ember-es-adapter/utils/es-query-builder';
+import {QueryDSL} from 'ember-es-adapter/utils/es-tools';
 
 export default Ember.Route.extend({
   model(params) {
     params = params ? params : {};
-    if (true) {
+    if (false) {
       params['esParams'] = {sort: 'date', sortType: 'desc'};
       params['backgroundReload'] = true;
 
@@ -17,17 +17,25 @@ export default Ember.Route.extend({
 
       //adding es params into the default params, and initiating new instance
       let esParams = {'sort': 'date', 'sortType': 'desc'};
-      let es = new EsQuery(esParams);
+      let dsl = new QueryDSL(esParams);
 
-      if (params.query) {
-        es.addBool({"query_string": {"query":params.query}});
-      }
+      dsl.query()
+        .bool()
+        .match_phrase({'title': 'second'});
 
-      params['esQuery'] = es.buildQuery();
+      console.log(dsl.getThis());
+      params['esQuery'] = {query:{match_all:{}},size: 20, sort: [{date:'desc'}]};
       return this.store.query('post', params);
     }
     //return this.store.findAll('post', {page:0, size:10, backgroundReload: false});
 
+  },
+
+  setupController(controller, model) {
+    if (Ember.ENV.Admin) {
+      controller.set('isAdmin', true);
+    }
+    controller.set('model', model);
   },
 
   actions: {
