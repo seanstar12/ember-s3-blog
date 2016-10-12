@@ -1,10 +1,52 @@
+{{#if isAdmin}}
+  <div class="admin-bar">
+    <ul class="admin-bar__links">
+      <li><button {{action "edit" model}}>{{buttonText}}</button></li> 
+      <li><button {{action "deletePost" model}}>Delete</button></li> 
+    </ul> 
+  </div>  
+
+  {{#if isEditing}}
+    <div class="live-edit">
+      <form class="create-form">
+        <div class="form-group">
+          <label> Title
+          {{input value=model.title class="form-control" placeholder="Title"}}
+          </label>
+        </div>
+        <div class="form-group">
+          <label> PostID
+          {{input value=model.postId class="form-control" placeholder="PostID"}}
+          </label>
+        </div>
+        <div class="form-group">
+          <label> Date
+          {{pikaday-input value=model.date onSelection=(action 'setDate')}}
+          </label>
+        </div>
+        <div class="form-group">
+          <label> Body
+          {{textarea value=model.body cols="100" rows="10" placeholder="Body"}}
+          </label>
+        </div>
+        <div class="form-group">
+          <label> Teaser
+          {{textarea value=model.teaser cols="100" rows="3" placeholder="Teaser"}}
+          </label>
+        </div>
+        <div class="form-group">
+          <label> Favorite
+          {{input checked=model.favorite type="checkbox" name="favorite"}}
+          </label>
+        </div>
+      </form>
+    </div>
+  {{/if}}
+{{/if}}
+
 <h2>
   {{model.title}}
   <span class="small">{{model.date}}</span>
 </h2>
-<br/>
-  <button class="delete-post" {{action "deletePost" model}}>
-    Delete Post ({{model.id}})
-  </button>
-<br/>
-{{{model.body}}}
+
+{{format-markdown model.body}}

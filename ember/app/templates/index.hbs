@@ -1,5 +1,32 @@
-<h4>Ember S3/ElasticSearch Blog</h4>
-<p>This site shows the efficiency of static S3 hosting, along with Elasticsearch.
-You can view the network requests to verify that the data is infact coming from Elasticsearch.</p>
-<br/>
-<a href="http://www.github.com/seanstar12/ember-es-adapter">Github link</a>
+{{#if isAdmin}}
+  <div class="admin-bar">
+    <ul class="admin-bar__links">
+      <li><button {{action "edit" model}}>{{buttonText}}</button></li> 
+    </ul> 
+  </div>  
+
+  {{#if isEditing}}
+    <div class="live-edit">
+      <form class="create-form">
+        <div class="form-group">
+          <label> ID (URL)
+          {{input value=model.id class="form-control" placeholder="ID"}}
+          </label>
+        </div>
+        <div class="form-group">
+          <label> Date
+          {{pikaday-input value=model.date onSelection=(action 'setDate')}}
+          </label>
+        </div>
+        <div class="form-group">
+          <label> Body
+          {{textarea value=model.body cols="100" rows="10" placeholder="Body"}}
+          </label>
+        </div>
+      </form>
+    </div>
+  {{/if}}
+{{/if}}
+{{format-markdown model.body}}
+
+<span class="small">Last Edited: {{model.date}}</span>
