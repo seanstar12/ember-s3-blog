@@ -8,6 +8,13 @@ export default Ember.Route.extend({
     this.transitionTo('posts');
   },
 
+  setupController(controller, model) {
+    if (Ember.ENV.Admin) {
+      controller.set('isAdmin', true);
+    }
+    controller.set('model', model);
+  },
+
   _getPost(id) {
     return this._getRecord(id).then(function(record) {
         return record;
@@ -40,18 +47,19 @@ export default Ember.Route.extend({
   actions: {
     error(error, transition) {
       if (error) {
-        return this.transitionTo('post.error')
-          .then(function(route) {
-            route.controller.set('model', error);
-            route.controller.set('transition', transition);
-          });
+        return this.transitionTo('/error');
       }
     },
+
     deletePost(model) {
-      console.log(model);
       model.deleteRecord();
       model.save();
+    },
+
+    edit(model) {
+      this.set('isEditing', true);
     }
+
   }
 
 
