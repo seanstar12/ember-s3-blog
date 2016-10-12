@@ -6,6 +6,8 @@
     "ember-cli-test-loader": "0.2.2",
     "ember-qunit-notifications": "0.1.0",
     "crypto-js": "^3.1.6",
-    "pikaday": "^1.4.0"
+    "pikaday": "^1.4.0",
+    "marked": "^0.3.6",
+    "highlightjs": "^9.7.0"
   }
 }
