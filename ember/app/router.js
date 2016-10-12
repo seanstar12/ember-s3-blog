@@ -6,17 +6,27 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('posts' ,function() {
-    this.route('error');
-    this.route('loading');
-  });
   this.route('post', { path: '/post' },function() {
-    this.route('index', { path: '/:post_id' });
+    this.route('index', { path: '/:post_id' }, function() {
+      this.route('new', { path: '/edit'});  
+    });
+
     this.route('new');
-    this.route('error');
     this.route('loading');
   });
-  this.route('about');
+
+
+  this.route('posts', {path: '/'}, function() {
+    this.route('loading');
+  });
+
+
+  this.route('index', {path: '/:page_id'});
+
+  this.route('error', { path: '/pages/error' });
+
+  this.route('not-found', { path: '/*path' });
+
 });
 
 export default Router;
