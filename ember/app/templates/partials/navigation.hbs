@@ -1,11 +1,9 @@
 <div class="nav">
-  <div class="nav__title">Ember S3 Blog</div>
+  <div class="nav__title">{{#link-to "posts"}}Ember S3 Blog{{/link-to}}</div>
   <ul class="nav__links">
-    <li>{{#link-to "posts"}}Home{{/link-to}}</li>
-    <li>{{#link-to "post" 1}}Post 1{{/link-to}}</li>
-    <li>{{#link-to "post" 2}}Post 2{{/link-to}}</li>
+    <li>{{#link-to "post" 1}}First{{/link-to}}</li>
     <li>{{#link-to "index" "nope"}}Error{{/link-to}}</li>
-    <li>{{#link-to "index" "elasticsearch"}}ElasticSearch{{/link-to}}</li>
+    <li>{{#link-to "index" "elasticsearch"}}ES{{/link-to}}</li>
     <li>{{#link-to "index" "about"}}About{{/link-to}}</li>
   </ul>
 </div>

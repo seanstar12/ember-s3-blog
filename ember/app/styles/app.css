@@ -51,6 +51,10 @@
     padding: 0.5em;
 }
 
+.container img {
+    max-width: 100%;
+}
+
 .admin-bar {
     display: flex;
     justify-content: flex-end;
