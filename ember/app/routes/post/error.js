@@ -6,7 +6,8 @@ export default Ember.Route.extend({
       return true;
     },
     error: function(error) {
-      this.transitionTo('index');
+      console.log(error);
+      console.log('post.error');
       throw new Error(error);
     }
   }
