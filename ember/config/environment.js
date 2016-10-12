@@ -10,12 +10,13 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
-      }
+      },
+      Admin: false
     },
 
     EsAdapter: {
       host:'https://search-ember-blog-bohdgohgfrrvqyhh6zwtai5yyi.us-east-1.es.amazonaws.com',
-      namespace: 'blog',
+      namespace: 'blog_v3',
     },
 
     APP: {
@@ -30,6 +31,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.EmberENV['Admin'] = true;
   }
 
   if (environment === 'test') {
