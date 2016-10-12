@@ -16,7 +16,7 @@ module.exports = function(environment) {
 
     EsAdapter: {
       host:'https://search-ember-blog-bohdgohgfrrvqyhh6zwtai5yyi.us-east-1.es.amazonaws.com',
-      namespace: 'blog_v3',
+      namespace: 'blog',
     },
 
     APP: {
