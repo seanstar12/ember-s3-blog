@@ -4,6 +4,7 @@ import EsTools from "ember-es-adapter/utils/es-mapper";
 
 export default Ember.Controller.extend({
   store: Ember.inject.service(),
+  toast: Ember.inject.service(),
   postId: 0,
   time: null,
   post: null,
@@ -48,6 +49,7 @@ export default Ember.Controller.extend({
     createPost() {
       let store = this.get('store');
       let post = this.get('post');
+      let toast = this.get('toast');
 
       let record = store.createRecord('post', {
         title: post.title,  
@@ -59,7 +61,14 @@ export default Ember.Controller.extend({
         id: this.get('postId'),  
       });
 
-      record.save();
+      record.save()
+        .then(() => {
+          toast.success('Post Created'); 
+        }, (err, msg) => {
+          console.log({err,msg});
+          toast.error(err,'Creation Failed'); 
+
+        });
     },
     error(error, transition) {
       if (error) {

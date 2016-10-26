@@ -4,8 +4,8 @@ import EsTools from "ember-es-adapter/utils/es-mapper";
 
 export default Ember.Controller.extend({
   store: Ember.inject.service(),
-  postId: 0,
-  time: null,
+  toast: Ember.inject.service(),
+
   post: null,
   disableSubmit: false,
   buttonText: Ember.computed('isEditing', function() {
@@ -32,7 +32,6 @@ export default Ember.Controller.extend({
   actions: {
     onDateSelect(date) {
       this.get('post').set('date', date);
-
     },
 
     deletePost(model) {
@@ -42,11 +41,23 @@ export default Ember.Controller.extend({
     },
 
     edit(model) {
-      if (this.get('isEditing')) {
-        model.save();
-      }
+      let toast = this.get('toast');
 
+      if (this.get('isEditing')) {
+        model.save()
+          .then(function(msg) {
+            toast.success('"' + msg.get('title') + '" has saved successfully.', 'Post Saved');
+          }, function(err) {
+            toast.error(err, 'Save Failed');
+            console.log('save failed'); 
+            console.log(err); 
+          });
+      }
       this.toggleProperty('isEditing');
+    },
+
+    cancel(model) {
+      this.set('isEditing', false);
     },
 
     setDate(date) {

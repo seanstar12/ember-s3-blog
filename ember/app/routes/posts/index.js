@@ -17,14 +17,15 @@ export default Ember.Route.extend({
 
       //adding es params into the default params, and initiating new instance
 
-      //let esParams = {'sort': 'date', 'sortType': 'desc'};
-      //let dsl = new QueryDSL(esParams);
+      let esParams = {'sort': 'date', 'sortType': 'desc'};
+      let dsl = new QueryDSL(esParams);
 
-      //dsl.query()
-      //  .bool()
-      //  .match_phrase({'title': 'second'});
+      dsl.query()
+        .bool('must')
+        .match({'title': 'second'});
+        //.match_phrase({'title': 'second'});
 
-      //console.log(dsl.getThis());
+      console.log(dsl.getThis());
       params['esQuery'] = {query:{match_all:{}},size: 20, sort: [{date:'desc'}]};
       return this.store.query('post', params);
     }
@@ -42,15 +43,19 @@ export default Ember.Route.extend({
   actions: {
     error(error, transition) {
       if (error) {
-        return this.transitionTo('post.error')
-          .then(function(route) {
-            route.controller.set('model', error);
-            route.controller.set('transition', transition);
-          });
+        console.log(error);
+        //return this.transitionTo('posts.error')
+        //  .then(function(route) {
+        //    route.controller.set('model', error);
+        //    route.controller.set('transition', transition);
+        //  });
       }
     },
     addPost() {
       this.transitionTo('post.new');
+    },
+    addPage() {
+      this.transitionTo('pages.new');
     }
   }
 

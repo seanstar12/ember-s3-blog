@@ -9,6 +9,7 @@ export default Ember.Route.extend({
   },
 
   setupController(controller, model) {
+    console.log(Ember.ENV);
     if (Ember.ENV.Admin) {
       controller.set('isAdmin', true);
     }

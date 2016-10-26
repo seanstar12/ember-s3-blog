@@ -6,6 +6,7 @@ export default DS.Model.extend({
   teaser: DS.attr(),
   date: DS.attr('es-date'),
   categories: DS.attr(),
-  postId: DS.attr('number'),
+  //postId: DS.attr('number'),
+  postId: DS.attr(),
 
 });
