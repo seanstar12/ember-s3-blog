@@ -1,0 +1,24 @@
+<h2>
+  New Page:
+  Title: 
+  <span class="small"></span>
+</h2>
+
+<form {{action "createPage" on="submit"}} class="create-form">
+  <div class="form-group">
+    <label> Title
+    {{input value=page.title class="form-control" placeholder="Title"}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label> URL
+    {{input value=page.url class="form-control" placeholder="URL"}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label> Body
+    {{textarea value=page.body cols="120" rows="10" placeholder="Body"}}
+    </label>
+  </div>
+  <button type="submit" class="btn">Save Page</button>
+</form>

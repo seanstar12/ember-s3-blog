@@ -11,6 +11,11 @@
     </label>
   </div>
   <div class="form-group">
+    <label> id
+    {{input value=postId class="form-control" placeholder="Title"}}
+    </label>
+  </div>
+  <div class="form-group">
     <label> Date
     {{pikaday-input onSelection=(action 'onDateSelect')}}
     </label>

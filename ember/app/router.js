@@ -15,6 +15,11 @@ Router.map(function() {
     this.route('loading');
   });
 
+  this.route('pages',function() {
+    this.route('new');
+    //this.route('loading');
+  });
+
 
   this.route('posts', {path: '/'}, function() {
     this.route('loading');
@@ -22,6 +27,8 @@ Router.map(function() {
 
 
   this.route('index', {path: '/:page_id'});
+
+  this.route('login');
 
   this.route('error', { path: '/pages/error' });
 

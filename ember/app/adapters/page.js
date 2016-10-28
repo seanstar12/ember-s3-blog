@@ -1,7 +1,7 @@
 import ES from 'ember-es-adapter/adapters/adapter';
-import config from 'ember-get-config';
+import env from 's3-blog/config/environment';
 
 export default ES.extend({
-  host: config.EsAdapter.host,
-  namespace: config.EsAdapter.namespace
+  host: env.APP.EsAdapter.host,
+  namespace: env.APP.EsAdapter.namespace
 });
