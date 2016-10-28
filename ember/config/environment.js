@@ -14,12 +14,11 @@ module.exports = function(environment) {
       Admin: false
     },
 
-    EsAdapter: {
-      host:'https://search-ember-blog-bohdgohgfrrvqyhh6zwtai5yyi.us-east-1.es.amazonaws.com',
-      namespace: 'blog',
-    },
-
     APP: {
+      EsAdapter: {
+        host:'https://search-ember-blog-bohdgohgfrrvqyhh6zwtai5yyi.us-east-1.es.amazonaws.com',
+        namespace: 'blog',
+      },
       // Here you can pass flags/options to your application instance
       // when it is created
     }

@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import fetch from "ember-network/fetch";
-import EsTools from "ember-es-adapter/utils/es-mapper";
+import {EsTools} from "ember-es-adapter/utils/es-tools";
 
 export default Ember.Controller.extend({
   store: Ember.inject.service(),

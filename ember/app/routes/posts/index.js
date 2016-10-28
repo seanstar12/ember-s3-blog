@@ -47,7 +47,8 @@ export default Ember.Route.extend({
         //  .sort(['date', {'title' : 'asc'}]);
       }
 
-      let dsl = new QueryDSL(params);
+      let dsl = new QueryDSL(params).query().bool('must');
+      //dsl.match({title: 'tim'});
       dsl.query({match_all:{}})
         .sort({'date': 'desc'});
 

@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import fetch from "ember-network/fetch";
-import EsTools from "ember-es-adapter/utils/es-mapper";
 
 export default Ember.Controller.extend({
   store: Ember.inject.service(),
@@ -13,8 +12,6 @@ export default Ember.Controller.extend({
   }),
 
   init() {
-    let es = new EsTools();
-
     this.set('post',
       Ember.Object.create({
         body: null,
