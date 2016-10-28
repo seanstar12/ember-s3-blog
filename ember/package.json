@@ -41,7 +41,7 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-cli-yuidoc": "0.8.7",
-    "ember-data": "^2.6.0",
+    "ember-data": "2.9.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-network": "0.3.0",
@@ -54,8 +54,7 @@
     "markdown-code-highlighting": "0.1.0"
   },
   "dependencies": {
-    "ember-cli-babel": "^5.1.6",
-    "ember-get-config": "^0.1.9"
+    "ember-cli-babel": "^5.1.6"
   },
   "ember-addon": {
     "paths": [
